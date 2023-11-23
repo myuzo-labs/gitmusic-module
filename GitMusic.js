@@ -8,6 +8,7 @@ class GitMusic {
 
   async clone(repositoryUrl) {
     // Clones a Git repository
+    await this.git.clone(repositoryUrl);
   }
 
   async commit(message) {
@@ -22,10 +23,13 @@ class GitMusic {
 
   async pull(branch) {
     // Pulls changes from a specified branch
+    await this.git.pull('origin', branch);
   }
 
   async merge(fromBranch, toBranch) {
     // Merges one branch into another
+    await this.git.checkout(toBranch);
+    await this.git.merge([fromBranch]);
   }
 }
 

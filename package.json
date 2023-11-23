@@ -1,0 +1,18 @@
+{
+  "name": "gitmusic-module",
+  "version": "1.0.0",
+  "description": "A Git-based version control module for the SvelteKit Multi-Tenant Music Platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.6",
+    "@google-cloud/storage": "^5.7.4",
+    "ffmpeg-static": "^4.2.7",
+    "simple-git": "^2.36.2"
+  }
+}

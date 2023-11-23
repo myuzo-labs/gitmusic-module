@@ -13,7 +13,20 @@ class GitMusic {
 
   async commit(message) {
     // Commits changes with a message
-    await this.git.commit(message);
+    const status = await this.git.status();
+    if (status.isClean()) {
+      return 'Nothing to commit';
+    }
+    try {
+      const commitResult = await this.git.commit(message);
+      return commitResult;
+    } catch (error) {
+      if (error.message.includes('conflict')) {
+        throw new Error('Commit conflict');
+      } else {
+        throw error;
+      }
+    }
   }
 
   async push(branch) {

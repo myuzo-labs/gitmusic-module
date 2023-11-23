@@ -12,10 +12,12 @@ class GitMusic {
 
   async commit(message) {
     // Commits changes with a message
+    await this.git.commit(message);
   }
 
   async push(branch) {
     // Pushes changes to a specified branch
+    await this.git.push('origin', branch);
   }
 
   async pull(branch) {
